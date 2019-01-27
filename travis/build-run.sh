@@ -34,6 +34,7 @@ case "$MPI_IMPL" in
         mpicc --showme:command
         # see https://github.com/open-mpi/ompi/issues/2956
         # fixes issues e.g. https://travis-ci.org/jeffhammond/armci-mpi/jobs/211165004
+        export OMPI_MCA_rmaps_base_mapping_policy=core:OVERSUBSCRIBE
         export TMPDIR=/tmp
         ;;
 esac
